@@ -1,6 +1,7 @@
 import footerlogo from "../../assets/footer/footerlogo.png";
 import { FaFacebook, FaSquareXTwitter, FaYoutube } from "react-icons/fa6";
-
+import { footerDetails } from "../../constants/footerDetails";
+import FooterLinks from "./FooterLinks";
 function Footer() {
   return (
     <div className="bg-[#F5F5DC] rounded flex flex-col gap-y-10 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-x-10 p-10 py-14">
@@ -24,47 +25,9 @@ function Footer() {
           </button>
         </div>
         <div className="grid min-[550px]:grid-cols-[min-content_min-content] lg:grid-cols-[min-content_min-content_min-content] xl:grid-cols-[min-content_min-content_min-content_min-content] gap-y-10 min-[550px]:gap-y-8  gap-x-28 place-content-center">
-          <div className="flex flex-col gap-y-4 max-[550px]:text-center min-[550px]:w-fit text-nowrap ">
-            <h2 className="font-Poppins font-bold text-[#2C2C2C] text-xl">
-              Products
-            </h2>
-            <div className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer">
-              Categories
-            </div>
-            <div className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer">
-              Top Products
-            </div>
-          </div>
-          <div className="flex flex-col gap-y-4 max-[550px]:text-center min-[550px]:w-fit text-nowrap ">
-            <h2 className="font-Poppins font-bold text-[#2C2C2C] text-xl">
-              Support
-            </h2>
-            <div className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer">
-              Support request
-            </div>
-            <div className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer">
-              Contact
-            </div>
-          </div>
-          <div className="flex flex-col gap-y-4 max-[550px]:text-center min-[550px]:w-fit text-nowrap ">
-            <h2 className="font-Poppins font-bold text-[#2C2C2C] text-xl">
-              About
-            </h2>
-            <div className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer">
-              Blogs
-            </div>
-            <div className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer">
-              FAQ's
-            </div>
-          </div>
-          <div className="flex flex-col gap-y-4 max-[550px]:text-center min-[550px]:w-fit text-nowrap ">
-            <h2 className="font-Poppins font-bold text-[#2C2C2C] text-xl">
-              Privacy policy
-            </h2>
-            <div className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer">
-              Terms & Conditions
-            </div>
-          </div>
+          {footerDetails.map((item) => (
+            <FooterLinks key={item.id} data={item} />
+          ))}
         </div>
         <hr className="w-full bg-[#5F5F5F] h-[2px]" />
         <div className="flex justify-between flex-col items-center gap-y-5 sm:flex-row sm:items-start">
