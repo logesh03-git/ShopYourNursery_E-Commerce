@@ -1,15 +1,9 @@
-type item = {
-  id: number;
-  title: string;
-  link: string;
-};
+import { footerDetailsProps } from "../../constants/footerDetails";
+
 type propsType = {
-  data: {
-    id: number;
-    title: string;
-    items: item[];
-  };
+  data: footerDetailsProps;
 };
+
 export default function FooterLinks({ data }: propsType) {
   return (
     <div className="flex flex-col gap-y-4 max-[550px]:text-center min-[550px]:w-fit text-nowrap ">
@@ -17,12 +11,13 @@ export default function FooterLinks({ data }: propsType) {
         {data.title}
       </h2>
       {data.items.map((item) => (
-        <div
+        <a
+          href={item.link}
           key={item.id}
-          className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer"
+          className="text-[#5E5E5E] font-medium font-Poppins text-base cursor-pointer no-underline"
         >
           {item.title}
-        </div>
+        </a>
       ))}
     </div>
   );
