@@ -27,7 +27,7 @@ export default function CustomerReviews() {
   ];
   const firstConfig = [...config, ...config];
   return (
-    <div className="flex flex-col gap-y-14 mx-[4vw] my-10 sm:my-14">
+    <div className="flex flex-col gap-y-14 mx-[4vw] my-10 sm:my-10 sm:mb-20">
       <h1 className="font-Philosopher text-3xl text-center sm:text-left sm:text-4xl md:text-5xl">
         Customer Reviews
       </h1>

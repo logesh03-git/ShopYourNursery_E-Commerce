@@ -1,4 +1,6 @@
 import React, { Suspense } from "react";
+import PopularPlants from "../components/PopularPlants/PopularPlants";
+import FeaturedPlants from "../components/FeaturedPlants/FeaturedPlants";
 const DiscoverCategories = React.lazy(
   () => import("../components/DiscoverCategories/DiscoverCategories")
 );
@@ -9,6 +11,7 @@ const Vase = React.lazy(() => import("../components/Vase/Vase"));
 export default function Home() {
   return (
     <>
+      <FeaturedPlants />
       <Suspense
         fallback={
           <div className="flex justify-center items-center h-screen font-semibold text-xl">
@@ -18,6 +21,7 @@ export default function Home() {
       >
         <DiscoverCategories />
       </Suspense>
+      <PopularPlants />
       <Suspense
         fallback={
           <div className="flex justify-center items-center h-screen font-semibold text-xl">
