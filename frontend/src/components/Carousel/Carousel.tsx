@@ -14,7 +14,7 @@ export default function Carousel() {
   return (
     <div className="flex justify-center max-w-[1600px] w-full">
       <div className="my-5 sm:mt-10 sm:mb-28 mx-[2vw] sm:mx-[6vw] max-w-[1200px]  overflow-hidden rounded-xl">
-        <CarouselMain autoSlide={false} autoSlideInterval={3000}>
+        <CarouselMain autoSlide={true} autoSlideInterval={3000}>
           {usableConfig.map((item, index) => (
             <img
               key={index}

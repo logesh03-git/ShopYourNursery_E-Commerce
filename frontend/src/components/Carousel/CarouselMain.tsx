@@ -72,7 +72,6 @@ function CarouselMain({
         <div className="w-fit border-none border-black flex justify-start gap-x-1 sm:gap-x-2">
           {Array.from({ length: slides.length }).map((_, index: number) => {
             if (index != 0 && index != slides.length - 1) {
-              console.log(index);
               return (
                 <div
                   key={index}
