@@ -12,12 +12,18 @@ export default function Carousel() {
   ];
   const usableConfig = [config[config.length - 1], ...config, config[0]];
   return (
-    <div className="my-5 sm:mt-10 sm:mb-28 mx-[2vw] sm:mx-[6vw]">
-      <CarouselMain autoSlide={true} autoSlideInterval={2000}>
-        {usableConfig.map((item, index) => (
-          <img key={index} src={item.img} className="rounded-xl" />
-        ))}
-      </CarouselMain>
+    <div className="flex justify-center max-w-[1600px] w-full">
+      <div className="my-5 sm:mt-10 sm:mb-28 mx-[2vw] sm:mx-[6vw] max-w-[1200px]  overflow-hidden rounded-xl">
+        <CarouselMain autoSlide={false} autoSlideInterval={3000}>
+          {usableConfig.map((item, index) => (
+            <img
+              key={index}
+              src={item.img}
+              className="rounded-xl w-full object-contain"
+            />
+          ))}
+        </CarouselMain>
+      </div>
     </div>
   );
 }

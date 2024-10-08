@@ -18,7 +18,7 @@ export default function FeaturedRow({ title, products }: propsType) {
   const viewAllStyles: string =
     "min-[650px]:grid min-[650px]:grid-cols-[17rem_17rem] lg:grid-cols-[17rem_17rem_17rem] min-[1420px]:grid-cols-[17rem_17rem_17rem_17rem] min-[1830px]:grid-cols-[17rem_17rem_17rem_17rem_17rem] gap-10 md:gap-20 lg:gap-14 xl:gap-20 min-[1420px]:gap-20  min-[1830px]:gap-20  min-[650px]:place-items-center  min-[650px]:place-content-center";
   return (
-    <div className="bg-[#DDF2D0] px-[4vw] py-14 flex flex-col gap-y-14 rounded-sm">
+    <div className="bg-[#DDF2D0] px-[4vw] py-14 flex flex-col gap-y-14 rounded-sm max-w-[1600px] w-full">
       <div className="flex justify-center sm:justify-between">
         <h1 className="font-Philosopher text-3xl text-center sm:text-left sm:text-4xl md:text-5xl">
           {title}

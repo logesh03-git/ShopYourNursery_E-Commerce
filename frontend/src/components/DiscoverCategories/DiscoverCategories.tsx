@@ -16,7 +16,7 @@ export default function DiscoverCategories() {
     { id: 6, title: "Decorative ", img: decorative },
   ];
   return (
-    <div className="flex flex-col gap-y-14 mx-[4vw] my-10 sm:my-20">
+    <div className="flex flex-col gap-y-14 mx-[4vw] my-10 sm:my-20 max-w-[1600px] w-full">
       <h1 className="font-Philosopher text-3xl text-center sm:text-left sm:text-4xl md:text-5xl">
         Discover by Categories
       </h1>

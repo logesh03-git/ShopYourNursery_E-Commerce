@@ -44,11 +44,11 @@ function CarouselMain({
     return () => clearInterval(slideInterval);
   }, [next]);
   return (
-    <div className="overflow-hidden relative borde-none border-black">
+    <div className="overflow-hidden  relative border-none border-black">
       <div
         onTransitionEnd={handleTransitionEnd}
         className={`flex ${
-          isTransitioning ? "transition-transform duration-500 ease-out" : ""
+          isTransitioning ? "transition-transform duration-1000 ease-out" : ""
         }`}
         style={{ transform: `translateX(-${currIndex * 100}%)` }}
       >
@@ -69,18 +69,17 @@ function CarouselMain({
         </button>
       </div>
       <div className="flex justify-center  w-full mt-2">
-        <div className="w-fit border-none border-black flex gap-x-1 sm:gap-x-2">
+        <div className="w-fit border-none border-black flex justify-start gap-x-1 sm:gap-x-2">
           {Array.from({ length: slides.length }).map((_, index: number) => {
             if (index != 0 && index != slides.length - 1) {
               console.log(index);
               return (
                 <div
                   key={index}
-                  className={`bg-[#C5C5C5] grow rounded-full border-none border-black ${
-                    currIndex == index
-                      ? "w-4 h-1 sm:w-8 sm:h-2 transition-all duration-500"
-                      : "w-2 h-1 sm:w-4 sm:h-2"
-                  } `}
+                  className={`bg-[#C5C5C5] rounded-full border-none border-black w-2 h-[3px] sm:w-4 sm:h-[6px] ${
+                    currIndex == index &&
+                    "w-4 h-[3px] sm:w-8 sm:h-[6px] transition-all duration-500"
+                  }`}
                 ></div>
               );
             }
