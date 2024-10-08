@@ -30,7 +30,7 @@ export default function FeaturedRow({ title, products }: propsType) {
           View All
         </div>
       </div>
-      <div className="relative">
+      <div className="relative border-none border-black">
         <div
           className={`${mobileStyles} ${
             viewAll ? viewAllStyles : intialStyles
@@ -45,10 +45,10 @@ export default function FeaturedRow({ title, products }: propsType) {
         </div>
         {!viewAll && (
           <>
-            <span className="absolute top-[45%] left-0 text-xl hidden sm:block ">
+            <span className="absolute top-[45%] -left-5 text-xl hidden sm:block ">
               <MdOutlineKeyboardDoubleArrowLeft />
             </span>
-            <span className="absolute top-[45%] right-0 text-xl hidden sm:block">
+            <span className="absolute top-[45%] -right-5 text-xl hidden sm:block">
               <MdOutlineKeyboardDoubleArrowRight />
             </span>
           </>
