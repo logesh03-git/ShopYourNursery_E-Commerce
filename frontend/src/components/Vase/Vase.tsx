@@ -29,10 +29,12 @@ function Vase() {
     },
   ];
   return (
-    <div className="bg-[#F5F5F5] my-24 sm:mx-[2vw] py-16 flex flex-col justify-center items-center sm:grid sm:grid-cols-[14rem_14rem] sm:gap-12 md:gap-20  sm:items-start sm:place-items-center gap-y-10 lg:h-[30rem] lg:flex lg:flex-row lg:gap-x-5 lg:items-center lg:justify-evenly min-[1450px]:gap-x-20 min-[1450px]:justify-center rounded-xl max-w-[1600px] w-full ">
-      {config.map((item) => (
-        <VaseCard key={item.id} card={item} />
-      ))}
+    <div className="px-[5vw] w-full">
+      <div className="bg-[#F5F5F5] my-24 py-16 flex flex-col justify-center items-center sm:grid sm:grid-cols-[14rem_14rem] sm:gap-12 md:gap-20  sm:items-start sm:place-items-center gap-y-10 lg:h-[30rem] lg:flex lg:flex-row lg:gap-x-5 lg:items-center lg:justify-evenly min-[1450px]:gap-x-20 min-[1450px]:justify-center rounded-xl max-w-[1600px] w-full">
+        {config.map((item) => (
+          <VaseCard key={item.id} card={item} />
+        ))}
+      </div>
     </div>
   );
 }

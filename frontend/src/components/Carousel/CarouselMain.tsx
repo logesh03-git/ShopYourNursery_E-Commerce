@@ -69,7 +69,7 @@ function CarouselMain({
         </button>
       </div>
       <div className="flex justify-center  w-full mt-2">
-        <div className="w-fit border-none border-black flex justify-start gap-x-1 sm:gap-x-2">
+        <div className="border-none border-black flex justify-start gap-x-1 sm:gap-x-2 w-fit">
           {Array.from({ length: slides.length }).map((_, index: number) => {
             if (index != 0 && index != slides.length - 1) {
               return (
