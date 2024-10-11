@@ -1,6 +1,6 @@
-import EmptyCart from "../components/Cart/EmptyCart";
-import ProductsCart from "../components/Cart/ProductsCart";
-import { useCart } from "../hooks/useCart";
+import EmptyCart from "../../components/Cart/EmptyCart";
+import ProductsCart from "../../components/Cart/ProductsCart";
+import { useCart } from "../../hooks/useCart";
 
 export default function CartPage() {
   const { cart } = useCart();

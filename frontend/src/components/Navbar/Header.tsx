@@ -2,6 +2,7 @@ import { RiSearch2Line } from "react-icons/ri";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { NavLink } from "react-router-dom";
 export default function Header() {
@@ -51,7 +52,11 @@ export default function Header() {
             <AccountCircleOutlinedIcon />
           </div>
           <div>
-            <FavoriteBorderOutlinedIcon />
+            <NavLink to="/favorite" className={``}>
+              {({ isActive }) =>
+                isActive ? <FavoriteIcon /> : <FavoriteBorderOutlinedIcon />
+              }
+            </NavLink>
           </div>
           <div>
             <NavLink to="/cart" className={``}>
