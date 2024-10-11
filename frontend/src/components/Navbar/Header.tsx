@@ -7,25 +7,27 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <div className="min-h-[6rem] border-b border-b-[#BDE3A6] px-8 flex items-center flex-wrap gap-x-8 flex-col gap-y-4 md:flex-row  xl:justify-between font-Poppins py-4 xl:py-0 justify-center w-full max-w-[1600px]">
-      <div className="text-xl font-bold  xl:hidden">ShopYourNursery</div>
+      <NavLink to="/" className="text-xl font-bold  xl:hidden">
+        ShopYourNursery
+      </NavLink>
       <ul className="flex list-none  gap-x-8 flex-wrap justify-center items-center gap-y-2 font-medium border-none border-black">
         <li>
-          <a href="#Home">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <a href="#ShopPlants">Shop Plants</a>
+          <NavLink to="/shop-plants">Shop Plants</NavLink>
         </li>
         <li>
-          <a href="#PlantCare">Plant Care</a>
+          <NavLink to="/plant-care">Plant Care</NavLink>
         </li>
         <li>
-          <a href="#Blog">Blog</a>
+          <NavLink to="/blog">Blog</NavLink>
         </li>
         <li>
-          <a href="#ContactUs">Contact Us</a>
+          <NavLink to="/contact-us">Blog</NavLink>
         </li>
         <li>
-          <a>FAQ</a>
+          <NavLink to="faqs">FAQ's</NavLink>
         </li>
       </ul>
       <NavLink

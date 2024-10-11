@@ -1,27 +1,42 @@
 import OrderRow from "./OrderRow";
 import securityIcon from "../../assets/icons/security.png";
-export default function OrderSummary() {
+type orderSummaryPropsType = {
+  priceSummary: {
+    shippingCharges: number;
+    couponDiscount: number;
+    totalAmount: number;
+    totalPrice: number;
+    totalItems: number;
+  };
+};
+export default function OrderSummary({ priceSummary }: orderSummaryPropsType) {
   return (
     <div className="flex flex-col pt-8 px-10 bg-[#F5F5DC] my-10 max-w-[24rem] shadow-md">
       <h1 className="font-Poppins text-center text-xl font-medium">
         Order Summary
       </h1>
       <div className="mt-12 mb-8">
-        <OrderRow title={"Total no.of Items"} price={5} />
+        <OrderRow title={"Total no.of Items"} qty={priceSummary.totalItems} />
       </div>
       <div className="flex flex-col gap-y-7 mb-7">
         <h2 className="font-Poppins font-medium">Price Details</h2>
         <div className="flex flex-col gap-y-3">
-          <OrderRow title={"Total price"} price={465} />
-          <OrderRow title={"Coupon Discount"} price={0} />
-          <OrderRow title={"Shipping Charges"} price={5} />
+          <OrderRow title={"Total price"} price={priceSummary.totalPrice} />
+          <OrderRow
+            title={"Coupon Discount"}
+            price={priceSummary.couponDiscount}
+          />
+          <OrderRow
+            title={"Shipping Charges"}
+            price={priceSummary.shippingCharges}
+          />
         </div>
       </div>
       <div className="bg-[#A5A5A5] h-[0.05838rem] w-full"></div>
       <div className="mt-7">
         <OrderRow
           title={"Total Amount"}
-          price={470}
+          price={priceSummary.totalAmount}
           priceStyles="font-semibold"
         />
       </div>
