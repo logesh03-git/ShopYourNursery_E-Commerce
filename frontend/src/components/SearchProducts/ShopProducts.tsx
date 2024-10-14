@@ -29,7 +29,7 @@ export default function ShopProducts() {
     getFilteredProducts();
     console.log(filter);
   }, [filter]);
-  console.log(products);
+  console.log(plantProducts);
   return (
     <div className="max-w-[1600px] w-full">
       <AdBanner />

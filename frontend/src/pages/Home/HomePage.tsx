@@ -2,8 +2,6 @@ import React, { Suspense } from "react";
 import PopularPlants from "../../components/PopularPlants/PopularPlants";
 import FeaturedPlants from "../../components/FeaturedPlants/FeaturedPlants";
 import Carousel from "../../components/Carousel/Carousel";
-import ProductCard from "../../components/RelatedProducts/ProductCard";
-import Filter from "../../components/SearchProducts/Filter";
 const DiscoverCategories = React.lazy(
   () => import("../../components/DiscoverCategories/DiscoverCategories")
 );
@@ -14,8 +12,6 @@ const Vase = React.lazy(() => import("../../components/Vase/Vase"));
 export default function Home() {
   return (
     <>
-      <Filter />
-      <ProductCard />
       <Carousel />
       <FeaturedPlants />
       <Suspense

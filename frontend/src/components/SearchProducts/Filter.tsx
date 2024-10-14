@@ -18,7 +18,7 @@ export default function Filter({ filterMap, handleFilter }: any) {
           Clear All
         </button>
       </div>
-      {filterMap.map((filter: any, index: number) => (
+      {filterMap?.map((filter: any, index: number) => (
         <FilterCard
           key={index}
           filter={filter}

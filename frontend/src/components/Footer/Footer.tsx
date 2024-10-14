@@ -2,9 +2,14 @@ import footerlogo from "../../assets/footer/footerlogo.png";
 import { FaFacebook, FaSquareXTwitter, FaYoutube } from "react-icons/fa6";
 import { footerDetails } from "../../constants/footerDetails";
 import FooterLinks from "./FooterLinks";
-function Footer() {
+type footerPropsType = {
+  className: string;
+};
+function Footer({ className }: footerPropsType) {
   return (
-    <div className="bg-[#F5F5DC] rounded flex flex-col gap-y-10 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-x-10 p-10 py-14 max-w-[1600px] w-full">
+    <div
+      className={`bg-[#F5F5DC] rounded flex flex-col gap-y-10 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-x-10 p-10 py-14 max-w-[1600px] w-full ${className}`}
+    >
       <div className="flex flex-col gap-y-8 items-center justify-center">
         <h2 className="font-bold font-Poppins text-3xl text-center">
           Shop Your Nursery

@@ -2,10 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 const HomePage = React.lazy(() => import("./pages/Home/HomePage"));
 const CartPage = React.lazy(() => import("./pages/Cart/CartPage"));
+const ShopProducts = React.lazy(
+  () => import("./components/SearchProducts/ShopProducts")
+);
+const FavoritePage = React.lazy(() => import("./pages/Favorite/FavoritePage"));
 import Layout from "./layout/Layout";
 import { Suspense } from "react";
-import FavoritePage from "./pages/Favorite/FavoritePage";
-import ShopProducts from "./components/SearchProducts/ShopProducts";
 export default function App() {
   return (
     <BrowserRouter>
