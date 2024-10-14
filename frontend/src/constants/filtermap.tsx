@@ -6,7 +6,12 @@ export const size = {
 export const price = {
   title: "Price",
   type: "price",
-  value: ["0-30", "30-60", "60-100", "100-INF"],
+  value: [
+    { min: 0, max: 30 },
+    { min: 30, max: 60 },
+    { min: 60, max: 100 },
+    { min: 100, max: Number.MAX_VALUE },
+  ],
 };
 export const place = {
   title: "Indoor/Outdoor",
@@ -20,4 +25,7 @@ export const customerRating = {
 };
 
 const filtermap = [size, price, place, customerRating];
+
+export const filterTypes = filtermap.map((item) => item.type);
+
 export default filtermap;

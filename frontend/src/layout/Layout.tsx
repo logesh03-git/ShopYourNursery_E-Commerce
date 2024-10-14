@@ -7,7 +7,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex flex-col items-center max-w-[1600px] w-full  bg-white">
         <Navbar />
         {children}
-        <Footer className=""/>
+        <Footer />
       </div>
     </div>
   );

@@ -1,15 +1,18 @@
 import { FaChevronDown } from "react-icons/fa6";
+import Blackstar from "../../svgIcons/Blackstar";
 type propsType = {
   filter: any;
   handleFilter: any;
   activeFilter: string[];
   handleActiveFilter: (type: string) => void;
+  selectedFilter: any;
 };
 export default function FilterCard({
   filter,
   handleFilter,
   activeFilter,
   handleActiveFilter,
+  selectedFilter,
 }: propsType) {
   return (
     <div className="px-4 flex flex-col gap-y-2">
@@ -29,19 +32,44 @@ export default function FilterCard({
           activeFilter.includes(filter?.type) ? "h-full" : "h-0"
         }`}
       >
-        {filter?.value?.map((item: any) => (
-          <div key={item} className="flex gap-x-2 items-center p-2">
-            <input
-              name="size"
-              type="checkbox"
-              className=""
-              value={item}
-              onChange={handleFilter}
-              //   checked={filter.includes(item)}
-            />
-            <span>{item}</span>
-          </div>
-        ))}
+        {filter?.value?.map((item: any, index: number) => {
+          return (
+            <div key={index} className="flex gap-x-2 items-center p-2">
+              <input
+                name={filter.type}
+                type="checkbox"
+                className=""
+                value={filter.type !== "price" ? item : JSON.stringify(item)}
+                onChange={handleFilter}
+                checked={selectedFilter[filter.type].includes(
+                  filter.type === "price"
+                    ? JSON.stringify(item)
+                    : filter.type == "place"
+                    ? item.toLowerCase()
+                    : item
+                )}
+              />
+              <div className="flex gap-x-1 items-center">
+                {filter.type !== "price" && item}
+                {filter.type == "rating" && (
+                  <div className="flex  items-center">
+                    <Blackstar size="18" />
+                    <span>& Above</span>
+                  </div>
+                )}
+                {filter.type == "price" && (
+                  <div>
+                    {item.min == 0
+                      ? `under $${item.max}`
+                      : item.max == Number.MAX_VALUE
+                      ? `above $${item.min}`
+                      : `$${item.min}-$${item.max}`}
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import Favorite from "../../svgIcons/Favorite";
 import Star from "../../svgIcons/Star";
 
 export default function ProductCard({ product }: any) {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-y-4 justify-start overflow-hidden relative cursor-pointer">
       <div className="h-[15rem] w-[13rem] rounded-[0.9375rem] bg-slate-200 shadow-shadowDown">
@@ -25,9 +27,12 @@ export default function ProductCard({ product }: any) {
           </div>
         </div>
         <h4 className="font-Poppins font-medium">{product.title}</h4>
-        <h2 className="font-bold text-xl font-Poppins">${product.price}</h2>
+        <h2 className="font-bold text-base font-Poppins">${product.price}</h2>
       </div>
-      <button className="bg-[#7AA262] text-[#F3F3F3] text-xl font-bold py-2 rounded-[1.875rem] w-full">
+      <button
+        onClick={() => navigate(`${product.id}`)}
+        className="bg-[#7AA262] text-[#F3F3F3] text-xl font-bold py-2 rounded-[1.875rem] w-full"
+      >
         Shop Now
       </button>
       <div className="flex gap-x-2 items-center rounded-[1.25rem] bg-[rgba(255,255,255,0.60)] hover:bg-white  absolute top-3 right-2 px-2 py-1 text-xs">
