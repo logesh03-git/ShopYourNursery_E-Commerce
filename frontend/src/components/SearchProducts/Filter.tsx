@@ -1,0 +1,32 @@
+import { useState } from "react";
+import FilterCard from "./FilterCard";
+export default function Filter({ filterMap, handleFilter }: any) {
+  // const [isRotated, setIsRotated] = useState<Boolean>(false);
+  const [activeFilter, setActiveFilter] = useState<string[]>([]);
+  const handleActiveFilter = (type: string) => {
+    setActiveFilter((prev) =>
+      prev.includes(type)
+        ? prev.filter((item) => item != type)
+        : [...prev, type]
+    );
+  };
+  return (
+    <div className="bg-[#F3F3F3] border border-[#D7D7D7] rounded-[0.625rem] w-[22rem] min-h-screen flex flex-col gap-y-5 shrink-0 ">
+      <div className="flex justify-between w-full items-center px-5 mt-12 mb-10">
+        <h2 className="font-Poppins font-semibold text-xl">Filter</h2>
+        <button className="font-Poppins font-medium text-[#358406] bg-[#FFFFFF] border border-[#358406] rounded-[0.625rem] py-2 px-4">
+          Clear All
+        </button>
+      </div>
+      {filterMap.map((filter: any, index: number) => (
+        <FilterCard
+          key={index}
+          filter={filter}
+          activeFilter={activeFilter}
+          handleActiveFilter={handleActiveFilter}
+          handleFilter={handleFilter}
+        />
+      ))}
+    </div>
+  );
+}

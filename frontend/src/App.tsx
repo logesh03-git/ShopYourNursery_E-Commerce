@@ -5,6 +5,7 @@ const CartPage = React.lazy(() => import("./pages/Cart/CartPage"));
 import Layout from "./layout/Layout";
 import { Suspense } from "react";
 import FavoritePage from "./pages/Favorite/FavoritePage";
+import ShopProducts from "./components/SearchProducts/ShopProducts";
 export default function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,22 @@ export default function App() {
                 }
               >
                 <HomePage />
+              </Suspense>
+            </Layout>
+          }
+        />
+        <Route
+          path="/shop-plants"
+          element={
+            <Layout>
+              <Suspense
+                fallback={
+                  <div className="flex justify-center items-center h-screen font-semibold text-xl">
+                    Loading...
+                  </div>
+                }
+              >
+                <ShopProducts />
               </Suspense>
             </Layout>
           }
