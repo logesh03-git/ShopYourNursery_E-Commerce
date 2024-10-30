@@ -1,5 +1,6 @@
 import OrderRow from "./OrderRow";
 import securityIcon from "../../assets/icons/security.png";
+import { NavLink } from "react-router-dom";
 type orderSummaryPropsType = {
   priceSummary: {
     shippingCharges: number;
@@ -41,9 +42,9 @@ export default function OrderSummary({ priceSummary }: orderSummaryPropsType) {
         />
       </div>
       <div className="mt-8">
-        <button className="bg-[#7AA262] w-full py-2 rounded-full text-[#F3F3F3] font-medium font-Poppins text-center">
+      <NavLink to="/cart/checkout"><button className="bg-[#7AA262] w-full py-2 rounded-full text-[#F3F3F3] font-medium font-Poppins text-center">
           Proceed to Checkout
-        </button>
+        </button></NavLink>
       </div>
       <div className="mt-20 mb-8 flex gap-x-2 items-center justify-center">
         <img src={securityIcon} className="w-5 h-5" />

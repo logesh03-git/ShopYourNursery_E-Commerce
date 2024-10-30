@@ -6,8 +6,12 @@ const ShopProducts = React.lazy(
   () => import("./components/SearchProducts/ShopProducts")
 );
 const FavoritePage = React.lazy(() => import("./pages/Favorite/FavoritePage"));
+const About = React.lazy(() => import("./components/About/About"));
+const Contact = React.lazy(() => import("./components/Contact/Contact"));
+
 import Layout from "./layout/Layout";
 import { Suspense } from "react";
+import Checkout from "./components/CheckoutPayment/Checkout";
 export default function App() {
   return (
     <BrowserRouter>
@@ -45,6 +49,38 @@ export default function App() {
           }
         />
         <Route
+          path="/about"
+          element={
+            <Layout>
+              <Suspense
+                fallback={
+                  <div className="flex justify-center items-center h-screen font-semibold text-xl">
+                    Loading...
+                  </div>
+                }
+              >
+                <About />
+              </Suspense>
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <Suspense
+                fallback={
+                  <div className="flex justify-center items-center h-screen font-semibold text-xl">
+                    Loading...
+                  </div>
+                }
+              >
+                <Contact />
+              </Suspense>
+            </Layout>
+          }
+        />
+        <Route
           path="/cart"
           element={
             <Layout>
@@ -56,6 +92,22 @@ export default function App() {
                 }
               >
                 <CartPage />
+              </Suspense>
+            </Layout>
+          }
+        />
+        <Route
+          path="/cart/checkout"
+          element={
+            <Layout>
+              <Suspense
+                fallback={
+                  <div className="flex justify-center items-center h-screen font-semibold text-xl">
+                    Loading...
+                  </div>
+                }
+              >
+                <Checkout />
               </Suspense>
             </Layout>
           }

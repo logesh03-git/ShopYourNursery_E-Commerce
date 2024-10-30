@@ -2,6 +2,11 @@ import React, { Suspense } from "react";
 import PopularPlants from "../../components/PopularPlants/PopularPlants";
 import FeaturedPlants from "../../components/FeaturedPlants/FeaturedPlants";
 import Carousel from "../../components/Carousel/Carousel";
+import DeliveryDetail from "../../components/OrderDetail/DeliveryDetail";
+import Shippingaddress from "../../components/OrderDetail/Shippingaddress";
+import Review from "../../components/OrderDetail/Review";
+import GrandTotal from "../../components/OrderDetail/GrandTotal";
+
 const DiscoverCategories = React.lazy(
   () => import("../../components/DiscoverCategories/DiscoverCategories")
 );
@@ -13,6 +18,10 @@ export default function Home() {
   return (
     <>
       <Carousel />
+      <DeliveryDetail />
+      <Shippingaddress />
+      <Review />
+      <GrandTotal />
       <FeaturedPlants />
       <Suspense
         fallback={
